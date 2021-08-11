@@ -37,7 +37,6 @@ class App extends React.Component {
             },
             () => console.log(this.state)
           );
-          console.log(this.state);
         });
       } else {
         // sets currentUser back to null (coming from the return of createUserProfileDocument())
