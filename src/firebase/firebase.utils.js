@@ -14,12 +14,9 @@ const config = {
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
-  // console.log("user auth (with constant connection to FIREBASE AUTH)", userAuth);
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-  // console.log("user reference (for all CRUD methods)", userRef);
   const snapShot = await userRef.get();
-  // console.log("snap shot (the data)", snapShot);
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
@@ -43,7 +40,6 @@ export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd
 ) => {
-  console.log(objectsToAdd);
   const collectionRef = firestore.collection(collectionKey);
 
   const batch = firestore.batch();
@@ -57,7 +53,6 @@ export const addCollectionAndDocuments = async (
 export const convertCollectionsSnapshotToMap = (collections) => {
   const transformedCollection = collections.docs.map((doc) => {
     const { title, items } = doc.data();
-    console.log("old snapshot.data:", doc.data());
 
     return {
       routename: encodeURI(title.toLowerCase()),
