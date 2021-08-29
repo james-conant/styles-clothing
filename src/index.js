@@ -21,3 +21,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+// Move any component that has connect() into a container component
