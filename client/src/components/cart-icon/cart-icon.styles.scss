@@ -16,6 +16,13 @@
     position: absolute;
     font-size: 10px;
     font-weight: bold;
-    bottom: 12px;
+    bottom: 3px;
+    right: 5px;
+    background-color: rgb(0, 125, 181);
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
   }
 }

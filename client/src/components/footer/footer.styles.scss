@@ -1,0 +1,14 @@
+.footer {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+
+  &__items {
+    padding: 10px 60px;
+  }
+
+  &__legal {
+    border-top: 1px solid black;
+  }
+}
