@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.div`
-  height: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
   /* margin-bottom: 25px; */
-  border-bottom: 1px solid black;
   padding: 0 60px;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
 
   @media screen and (max-width: 800px) {
     height: 60px;

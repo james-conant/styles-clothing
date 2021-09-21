@@ -20,8 +20,8 @@ import {
 } from "./header.styles";
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
-  <div className="header">
-    <HeaderContainer>
+  <div>
+    <HeaderContainer className="header">
       <LogoContainer to="/">
         <Logo className="logo" />
       </LogoContainer>

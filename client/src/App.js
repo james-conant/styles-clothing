@@ -35,25 +35,27 @@ const App = () => {
     <div>
       <GlobalStyles />
       <Header />
-      <AdvertScroll>SCROLLY THINGY</AdvertScroll>
-      <ErrorBoundry>
-        <Suspense fallback={<Spinner />}>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/shop" component={ShopPage} />
-            <Route path="/checkout" component={CheckoutPage} />
+      <div className="content">
+        <AdvertScroll>SCROLLY THINGY</AdvertScroll>
+        <ErrorBoundry>
+          <Suspense fallback={<Spinner />}>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/shop" component={ShopPage} />
+              <Route path="/checkout" component={CheckoutPage} />
 
-            <Route
-              exact
-              path="/signin"
-              render={() =>
-                currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
-              }
-            />
-          </Switch>
-        </Suspense>
-      </ErrorBoundry>
-      <Footer />
+              <Route
+                exact
+                path="/signin"
+                render={() =>
+                  currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
+                }
+              />
+            </Switch>
+          </Suspense>
+        </ErrorBoundry>
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -18,8 +18,14 @@ body {
     box-sizing: border-box;
   }
 
+  .content {
+    padding-top: 10vh;
+  }
+
   .header {
     margin: 0 -60px;
+    height: 10vh;
+    border-bottom: 1px solid black;
   }  
 
   .footer {
