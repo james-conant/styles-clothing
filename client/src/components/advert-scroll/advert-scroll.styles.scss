@@ -1,9 +1,68 @@
-.scroll-wrapper {
+.advert-scroll {
   height: 5vh;
   display: flex;
-  align-items: center;
   width: 100%;
   justify-content: center;
+  z-index: 6;
+}
+
+.scroll-wrapper {
+  display: flex;
+  width: 430px;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
 }
 .text {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+}
+
+.animation-right {
+  animation: 0.5s slide-right;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: 100px;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+.animation-left {
+  animation: 0.5s slide-left;
+}
+@keyframes slide-left {
+  from {
+    margin-right: 100px;
+  }
+
+  to {
+    margin-right: 0%;
+  }
+}
+
+.button {
+  cursor: pointer;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 5000ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 3000ms ease-in;
 }

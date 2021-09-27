@@ -1,8 +1,10 @@
 .payments {
+  height: 35px;
   padding-top: 5px;
+  display: flex;
+  flex-direction: row;
 }
-// svg {
-//   width: auto;
-//   height: 2rem;
-//   padding-right: 4px;
-// }
+
+svg {
+  height: 100%;
+}

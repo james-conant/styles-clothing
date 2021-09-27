@@ -19,20 +19,25 @@ body {
   }
 
   .content {
-    padding-top: 10vh;
+    padding-top: 3vh;
   }
 
-  .header {
+  .header-container {
     margin: 0 -60px;
-    height: 10vh;
+    height: 7vh;
     border-bottom: 1px solid black;
   }  
+
+  .super-container {
+
+
+  }
 
   .footer {
     margin: 0 -60px;
   }
 
-  .page-banner {
+  .banner-wrapper {
     margin: 0 -60px;
 
   }

@@ -2,14 +2,19 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.div`
+  position: fixed;
   width: 100%;
+  height: inherit;
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 25px; */
   padding: 0 60px;
-  position: fixed;
-  z-index: 1;
+  padding-top: 3.5vh;
+  height: 10vh;
   background-color: white;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  z-index: 1;
 
   @media screen and (max-width: 800px) {
     height: 60px;
@@ -18,25 +23,16 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const LogoContainer = styled(Link)`
-  height: 100%;
-  /* width: 515px; */
-  /* padding: 25px; */
-  display: flex;
-  align-items: center;
-
-  @media screen and (max-width: 800px) {
-    width: 50px;
-    padding: 0;
-  }
+export const OptionsContainerLeft = styled.div`
+  width: 20%;
 `;
 
-export const OptionsContainer = styled.div`
-  /* width: 50%; */
+export const OptionsContainerRight = styled.div`
+  width: 20%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 
   @media screen and (max-width: 800px) {
     width: 80%;
@@ -47,14 +43,28 @@ export const OptionsContainerMid = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  margin: 0 0 0 230px;
 
   @media screen and (max-width: 800px) {
     width: 80%;
   }
 `;
 
-export const OptionLink = styled(Link)`
+export const OptionContainer = styled.div`
   padding: 10px 12px;
+`;
+
+export const OptionLink = styled(Link)`
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+`;
+export const SignInLink = styled(Link)`
+  padding: 10px 12px;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  font-size: 10px;
+  width: 60px;
+
   cursor: pointer;
 `;

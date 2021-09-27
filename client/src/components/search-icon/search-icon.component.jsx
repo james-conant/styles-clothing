@@ -1,12 +1,11 @@
 import React from "react";
-import "./search-icon.styles.scss";
-import { ReactComponent as SearchMagnifierIcon } from "../../assets/magnifier.svg";
+import { Container, SVG } from "./search-icon.styles";
 
 const SearchIcon = () => {
   return (
-    <div className="container-wrapper">
-      <SearchMagnifierIcon></SearchMagnifierIcon>
-    </div>
+    <Container>
+      <SVG></SVG>
+    </Container>
   );
 };
 

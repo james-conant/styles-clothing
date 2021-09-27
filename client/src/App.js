@@ -36,7 +36,7 @@ const App = () => {
       <GlobalStyles />
       <Header />
       <div className="content">
-        <AdvertScroll>SCROLLY THINGY</AdvertScroll>
+        <AdvertScroll />
         <ErrorBoundry>
           <Suspense fallback={<Spinner />}>
             <Switch>
