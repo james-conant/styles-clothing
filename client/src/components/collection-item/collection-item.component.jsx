@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.actions";
 
@@ -6,14 +6,30 @@ import CustomButton from "../custom-button/custom-buttom.component";
 
 import "./collection-item.styles.scss";
 
-const collectionItem = ({ item, addItem }) => {
+const collectionItem = ({ item, addItem, extra1 }) => {
   const { name, price, imageUrl } = item;
   return (
     <div className="collection-item">
       <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className="collection-footer">
-        <span className="name">{name}</span>
-        <span className="price">{price}</span>
+        {extra1 ? (
+          <Fragment>
+            <div className="collection-footer__line-1">
+              <span className="collection-footer__extra-1">{extra1}</span>
+              <span className="collection-footer__price">${price} USD</span>
+            </div>
+            <div className="collection-footer__line-2">
+              <span className="collection-footer__name">{name}</span>
+            </div>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <div className="collection-footer__line-1">
+              <span className="collection-footer__name">{name}</span>
+              <span className="collection-footer__price">${price} USD</span>
+            </div>
+          </Fragment>
+        )}
       </div>
       <CustomButton onClick={() => addItem(item)} inverted>
         Add to cart

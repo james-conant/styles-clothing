@@ -27,6 +27,7 @@ const CartDropdown = () => {
         )}
       </div>
       <CustomButton
+        className="custom-button"
         onClick={() => {
           console.log(history);
           history.push("/checkout");

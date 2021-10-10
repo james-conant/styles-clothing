@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import MainPageBanner from "../../components/page-banners/main-page-banner/main-page-banner.component";
 
-export const HomePageContainer = styled.div`
+export const WomensPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

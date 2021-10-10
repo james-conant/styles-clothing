@@ -8,24 +8,24 @@ import { selectCollection } from "../../redux/shop/shop.selectors";
 import FooterBanner from "../../components/footer-banner/footer-banner.component";
 
 import {
-  HomePageContainer,
+  WomensPageContainer,
   MainPageBannerWrapper,
   CollectionsOverviewWrapper,
-} from "./homepage.styles";
+} from "./womens-page.styles";
 
 import {
-  homepageImage,
-  homepageImage2,
-  mustHavesImage,
+  womensPageImage,
+  womensPageImage2,
+  apexLogo,
 } from "../../assets/index";
 
-const HomePage = ({ hotItemsCollection, newReleasesCollection }) => {
+const WomensPage = ({ hotItemsCollection, newReleasesCollection }) => {
   return (
-    <HomePageContainer>
+    <WomensPageContainer>
       <MainPageBannerWrapper
-        primaryImage={homepageImage}
-        secondaryImage={mustHavesImage}
-        text="For those who move."
+        primaryImage={womensPageImage}
+        title="YOUR LATEST MISSION"
+        text="Made possible in all-new Adapt Camo"
         styleType={1}
       />
       <CollectionsOverviewWrapper>
@@ -37,9 +37,9 @@ const HomePage = ({ hotItemsCollection, newReleasesCollection }) => {
         />
       </CollectionsOverviewWrapper>
       <MainPageBannerWrapper
-        primaryImage={homepageImage2}
-        text="The Gymshark x Whitney Simmons Collection"
-        title="SHAPED BY PROGRESS"
+        primaryImage={womensPageImage2}
+        secondaryImage={apexLogo}
+        text="Elite seamless, engineered heat-mapping, enduring ergonomic designs."
         styleType={2}
       />
       <CollectionsOverviewWrapper>
@@ -52,7 +52,7 @@ const HomePage = ({ hotItemsCollection, newReleasesCollection }) => {
       </CollectionsOverviewWrapper>
 
       <FooterBanner className="footer-banner" />
-    </HomePageContainer>
+    </WomensPageContainer>
   );
 };
 
@@ -61,4 +61,4 @@ const mapStateToProps = createStructuredSelector({
   newReleasesCollection: selectCollection("new-releases"),
 });
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps)(WomensPage);

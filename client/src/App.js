@@ -13,7 +13,13 @@ import AdvertScroll from "./components/advert-scroll/advert-scroll.component";
 
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { checkUserSession } from "./redux/user/user.actions";
+
 const HomePage = lazy(() => import("./pages/homepage/homepage.component"));
+const WomensPage = lazy(() =>
+  import("./pages/womens-page/womens-page.component")
+);
+const MensPage = lazy(() => import("./pages/mens-page/mens-page.component"));
+
 const ShopPage = lazy(() => import("./pages/shop/shop.component"));
 const SignInAndSignUp = lazy(() =>
   import("./pages/sign-in-and-sign-up/sign-in-and-sign-up.component")
@@ -41,7 +47,12 @@ const App = () => {
           <Suspense fallback={<Spinner />}>
             <Switch>
               <Route exact path="/" component={HomePage} />
+
+              <Route exact path="/shop/mens" component={MensPage} />
+              <Route exact path="/shop/womens" component={WomensPage} />
+
               <Route path="/shop" component={ShopPage} />
+
               <Route path="/checkout" component={CheckoutPage} />
 
               <Route

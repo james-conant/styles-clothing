@@ -8,24 +8,25 @@ import { selectCollection } from "../../redux/shop/shop.selectors";
 import FooterBanner from "../../components/footer-banner/footer-banner.component";
 
 import {
-  HomePageContainer,
+  MensPageContainer,
   MainPageBannerWrapper,
   CollectionsOverviewWrapper,
-} from "./homepage.styles";
+} from "./mens-page.styles";
 
 import {
-  homepageImage,
-  homepageImage2,
+  mensPageImage,
+  mensPageImage2,
   mustHavesImage,
+  apexLogo,
 } from "../../assets/index";
 
-const HomePage = ({ hotItemsCollection, newReleasesCollection }) => {
+const MensPage = ({ hotItemsCollection, newReleasesCollection }) => {
   return (
-    <HomePageContainer>
+    <MensPageContainer>
       <MainPageBannerWrapper
-        primaryImage={homepageImage}
+        primaryImage={mensPageImage}
         secondaryImage={mustHavesImage}
-        text="For those who move."
+        text={"Move like Ryan Garcia in these essentials"}
         styleType={1}
       />
       <CollectionsOverviewWrapper>
@@ -37,9 +38,9 @@ const HomePage = ({ hotItemsCollection, newReleasesCollection }) => {
         />
       </CollectionsOverviewWrapper>
       <MainPageBannerWrapper
-        primaryImage={homepageImage2}
-        text="The Gymshark x Whitney Simmons Collection"
-        title="SHAPED BY PROGRESS"
+        primaryImage={mensPageImage2}
+        text="Elite seamless, engineered heat-mapping, enduring ergonomic designs."
+        secondaryImage={apexLogo}
         styleType={2}
       />
       <CollectionsOverviewWrapper>
@@ -52,7 +53,7 @@ const HomePage = ({ hotItemsCollection, newReleasesCollection }) => {
       </CollectionsOverviewWrapper>
 
       <FooterBanner className="footer-banner" />
-    </HomePageContainer>
+    </MensPageContainer>
   );
 };
 
@@ -61,4 +62,4 @@ const mapStateToProps = createStructuredSelector({
   newReleasesCollection: selectCollection("new-releases"),
 });
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps)(MensPage);

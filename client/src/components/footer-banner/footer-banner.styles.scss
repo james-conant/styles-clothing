@@ -1,0 +1,32 @@
+.footer-banner {
+  width: -webkit-fill-available;
+  height: 120px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 750px;
+    color: white;
+  }
+  &__text {
+    color: white;
+  }
+
+  &__button {
+    background-color: #fff;
+    color: #000;
+    border-radius: 5rem;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    text-align: center;
+    cursor: pointer;
+  }
+}
