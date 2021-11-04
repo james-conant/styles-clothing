@@ -46,6 +46,17 @@ export const Wrapper = styled.div`
         font-weight: 700;
       }
     }
+    &--3 {
+      align-items: flex-start;
+      padding-bottom: 300px;
+      padding-left: 100px;
+      font-size: 18px;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      .item {
+        margin-top: -30px;
+        width: 400px;
+      }
+    }
   }
 `;
 

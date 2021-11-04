@@ -42,6 +42,10 @@ body {
 
   }
 
+  .collection-header {
+    margin: 0 -60px;
+  }
+
   .footer-banner {
     margin: 0 -60px;
   }

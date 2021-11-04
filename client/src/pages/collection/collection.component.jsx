@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import CollectionItem from "../../components/collection-item/collection-item.component";
+import CollectionHeader from "./components/collection-header/collection-header.component";
+import CollectionFilter from "./components/collection-filter/collection-filter.component";
+import FooterBanner from "../../components/footer-banner/footer-banner.component";
 
 import { selectCollection } from "../../redux/shop/shop.selectors";
 
@@ -14,12 +17,14 @@ const CollectionPage = () => {
   const { title, items } = collection;
   return (
     <div className="collection-page">
-      <h2 className="title">{title}</h2>
+      <CollectionHeader category={title} />
+      <CollectionFilter />
       <div className="items">
         {items.map((item) => (
-          <CollectionItem key={item.id} item={item} />
+          <CollectionItem size="collection" key={item.id} item={item} />
         ))}
       </div>
+      <FooterBanner />
     </div>
   );
 };

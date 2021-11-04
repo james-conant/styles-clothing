@@ -1,0 +1,16 @@
+.collection-filter {
+  height: 75px;
+  width: 25%;
+  justify-content: space-between;
+  padding-top: 15px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  &__price {
+  }
+  &__sortby {
+  }
+}

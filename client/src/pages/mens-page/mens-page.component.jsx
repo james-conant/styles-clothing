@@ -41,7 +41,7 @@ const MensPage = ({ hotItemsCollection, newReleasesCollection }) => {
         primaryImage={mensPageImage2}
         text="Elite seamless, engineered heat-mapping, enduring ergonomic designs."
         secondaryImage={apexLogo}
-        styleType={2}
+        styleType={3}
       />
       <CollectionsOverviewWrapper>
         <CollectionPreview

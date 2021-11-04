@@ -1,11 +1,15 @@
 .collection-item {
   width: 22.5vw;
+  height: 560px;
   display: flex;
   flex-direction: column;
-  height: 560px;
   align-items: center;
   position: relative;
   font-family: Roboto, Helvetica, Arial, sans-serif;
+  &--collection {
+    width: 18vw;
+    height: 445px;
+  }
 
   .image {
     width: 100%;
@@ -19,7 +23,7 @@
     width: 80%;
     opacity: 0.7;
     position: absolute;
-    top: 450px;
+    top: 340px;
     display: none;
 
     @media screen and (max-width: 800px) {
