@@ -5,17 +5,22 @@ const path = require("path");
 const compression = require("compression");
 const enforce = require("express-sslify");
 
+const connectDB = require("./db/db");
+
+const testRouter = require("./api/routes/test");
+
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
 const app = express();
+connectDB();
 
 const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(cors());
+
+// db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 if (process.env.NODE_ENV === "production") {
   app.use(enforce.HTTPS({ trustProtoHeader: true }));
@@ -27,6 +32,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+app.use("/api", testRouter);
+
 app.listen(port, (error) => {
   if (error) throw error;
   console.log(`shits up on port ${port}!`);
@@ -34,17 +41,4 @@ app.listen(port, (error) => {
 
 app.get("/service-worker.js", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "service-worker.js"));
-});
-
-app.post("/payment", (req, res) => {
-  const body = {
-    source: req.body.token.id,
-    amount: req.body.amount,
-    currency: "usd",
-  };
-  stripe.charges.create(body, (stripeErr, stripeRes) => {
-    stripeErr
-      ? res.status(500).send({ error: stripeErr })
-      : res.status(200).send({ success: stripeRes });
-  });
 });
