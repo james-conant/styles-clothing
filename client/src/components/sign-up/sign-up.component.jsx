@@ -10,20 +10,20 @@ import "./sign-up.styles.scss";
 
 const SignUp = ({ signUpStart }) => {
   const [userCredentials, setUserCredentials] = useState({
-    displayName: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const { displayName, email, password, confirmPassword } = userCredentials;
+  const { username, email, password, confirmPassword } = userCredentials;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
       alert("Passwords dont match!");
     } else {
-      signUpStart({ displayName, email, password, confirmPassword });
+      signUpStart({ username, email, password, confirmPassword });
     }
   };
 
@@ -40,8 +40,8 @@ const SignUp = ({ signUpStart }) => {
         <form className="sign-up-form" onSubmit={handleSubmit}>
           <FormInput
             type="text"
-            name="displayName"
-            value={displayName}
+            name="username"
+            value={username}
             handleChange={handleChange}
             label="Display Name"
             required

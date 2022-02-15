@@ -8,6 +8,7 @@ const enforce = require("express-sslify");
 const connectDB = require("./db/db");
 
 const userRoute = require("./api/routes/user");
+const shopRoute = require("./api/routes/shop");
 const authRoute = require("./api/routes/auth");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
@@ -33,6 +34,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 app.use("/api/user", userRoute);
+app.use("/api/shop", shopRoute);
+
 app.use("/api/auth", authRoute);
 
 app.listen(port, (error) => {

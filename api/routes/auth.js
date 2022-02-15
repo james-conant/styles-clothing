@@ -6,54 +6,43 @@ const jwt = require("jsonwebtoken");
 
 // Register
 router.post("/register", async (req, res) => {
-  const encryptedPassword = CryptoJS.AES.encrypt(
-    req.body.password,
-    process.env.PASS_SEC
-  ).toString();
-
   const newUser = new User({
     username: req.body.username,
     email: req.body.email,
-    password: encryptedPassword,
+    password: CryptoJS.AES.encrypt(
+      req.body.password,
+      process.env.PASS_SEC
+    ).toString(),
   });
-
   try {
     const savedUser = await newUser.save();
-    res.json(savedUser);
+    const { password, ...filtered } = savedUser._doc;
+
+    res.json(filtered);
   } catch (error) {
-    res.json(error);
+    res.status(500).send(error);
   }
 });
 
 // Login
 router.post("/login", async (req, res) => {
   try {
-    const user = await User.findOne({ username: req.body.username });
-    if (!user) return res.json("Wrong Credentials");
-
+    const user = await User.findOne({ email: req.body.email });
     const hashedPassword = CryptoJS.AES.decrypt(
       user.password,
       process.env.PASS_SEC
-    ).toString(CryptoJS.enc.Utf8);
-    if (hashedPassword !== req.body.password) return res.json("Wrong Password");
-
-    const jsonWebToken = jwt.sign(
-      {
-        id: user._id,
-        isAdmin: user.isAdmin,
-      },
-      process.env.JWT_SEC,
-      {
-        expiresIn: "3d",
-      }
     );
 
-    // not using password
-    const { password, ...others } = user._doc;
+    const inputPassword = req.body.password;
+    const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+    inputPassword !== originalPassword &&
+      res.status(401).send({ error: "Wrong Credentials" });
 
-    res.json({ ...others, jsonWebToken });
+    const { password, ...filtered } = user._doc;
+ 
+    res.json(filtered);
   } catch (error) {
-    res.json(error);
+    res.status(500).send(error);
   }
 });
 

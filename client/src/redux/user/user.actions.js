@@ -16,7 +16,9 @@ export const signInSuccess = (user) => ({
 
 export const signInFailure = (error) => ({
   type: UserActionTypes.SIGN_IN_FAILURE,
-  payload: error,
+  payload: error.response.data
+    ? error.response.data
+    : { error: "Server Error" },
 });
 
 export const checkUserSession = () => ({
@@ -41,11 +43,14 @@ export const signUpStart = (userCredentials) => ({
   payload: userCredentials,
 });
 
-export const signUpSuccess = ({ user, additionalData }) => ({
+export const signUpSuccess = (user) => ({
   type: UserActionTypes.SIGN_UP_SUCCESS,
-  payload: { user, additionalData },
+  payload: user,
 });
 
-export const signUpFailure = () => ({
+export const signUpFailure = (error) => ({
   type: UserActionTypes.SIGN_UP_FAILURE,
+  payload: error.response.data.keyValue
+    ? error.response.data.keyValue
+    : { error: "Server Error" },
 });

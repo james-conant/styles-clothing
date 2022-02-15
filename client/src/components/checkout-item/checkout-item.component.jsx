@@ -10,13 +10,13 @@ import {
 import "./checkout-item.styles.scss";
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
-  const { name, imageUrl, price, quantity } = cartItem;
+  const { title, imageUrl, price, quantity } = cartItem;
   return (
     <div className="checkout-item">
       <div className="image-container">
         <img alt="item" src={imageUrl} />
       </div>
-      <span className="name">{name}</span>
+      <span className="name">{title}</span>
       <span className="quantity">
         <div className="arrow" onClick={() => removeItem(cartItem)}>
           &#10094;

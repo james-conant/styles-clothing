@@ -28,28 +28,14 @@ const HomePage = ({ hotItemsCollection, newReleasesCollection }) => {
         text="For those who move."
         styleType={1}
       />
-      <CollectionsOverviewWrapper>
-        <CollectionPreview
-          length={4}
-          extra1="new"
-          id={hotItemsCollection.id}
-          {...hotItemsCollection}
-        />
-      </CollectionsOverviewWrapper>
+      <CollectionsOverviewWrapper></CollectionsOverviewWrapper>
       <MainPageBannerWrapper
         primaryImage={homepageImage2}
         text="The Gymshark x Whitney Simmons Collection"
         title="SHAPED BY PROGRESS"
         styleType={2}
       />
-      <CollectionsOverviewWrapper>
-        <CollectionPreview
-          length={4}
-          extra1="new"
-          id={newReleasesCollection.id}
-          {...newReleasesCollection}
-        />
-      </CollectionsOverviewWrapper>
+      <CollectionsOverviewWrapper></CollectionsOverviewWrapper>
 
       <FooterBanner className="footer-banner" />
     </HomePageContainer>
