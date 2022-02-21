@@ -2,14 +2,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.div`
-  position: fixed;
   width: 100%;
   height: inherit;
   display: flex;
   justify-content: space-between;
-  padding: 0 60px;
-  padding-top: 3.5vh;
-  height: 10vh;
+  padding: 0 3vw;
+  height: 6vh;
   background-color: white;
   border-bottom: 1px solid rgb(235, 235, 235);
   font-family: Montserrat, Helvetica, Arial, sans-serif;

@@ -1,0 +1,52 @@
+.homepage {
+  display: grid;
+  grid-template-areas:
+    "banner1"
+    "collection1"
+    "banner2"
+    "collection2";
+
+  &__mainbanner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 90px;
+    color: #fff;
+
+    &--1 {
+      grid-area: banner1;
+      height: 60vw;
+    }
+    &--2 {
+      grid-area: banner2;
+      height: 50vw;
+    }
+  }
+
+  &__collection {
+    width: 100%;
+    height: 31vw;
+    display: flex;
+    padding: 20px;
+    overflow-x: scroll;
+    // overscroll-behavior: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 20px;
+    scroll-padding-inline-start: 20px;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &--1 {
+      grid-area: collection1;
+    }
+    &--2 {
+      grid-area: collection2;
+    }
+  }
+}

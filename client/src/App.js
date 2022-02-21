@@ -9,7 +9,6 @@ import { GlobalStyles } from "./global.styles";
 import Header from "./components/header/header.component";
 import Footer from "./components/footer/footer.component";
 import Spinner from "./components/spinner/spinner.component";
-import AdvertScroll from "./components/advert-scroll/advert-scroll.component";
 
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { checkUserSession } from "./redux/user/user.actions";
@@ -42,7 +41,6 @@ const App = () => {
       <GlobalStyles />
       <Header />
       <div className="content">
-        <AdvertScroll />
         <ErrorBoundry>
           <Suspense fallback={<Spinner />}>
             <Switch>

@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useEffect, Suspense } from "react";
 
-import CollectionPreview from "../../components/collection-preview/collection-preview.component";
+import CollectionItem from "../../components/collection-item/collection-item.component";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import { fetchCollectionsStart } from "../../redux/shop/shop.actions";
 
-import { selectCollection } from "../../redux/shop/shop.selectors";
 import FooterBanner from "../../components/footer-banner/footer-banner.component";
+// import Spinner from "../../components/spinner/spinner.component";
 
-import {
-  HomePageContainer,
-  MainPageBannerWrapper,
-  CollectionsOverviewWrapper,
-} from "./homepage.styles";
+import "./homepage.styles.scss";
+import MainPageBanner from "../../components/page-banners/main-page-banner/main-page-banner.component";
 
 import {
   homepageImage,
@@ -19,32 +16,52 @@ import {
   mustHavesImage,
 } from "../../assets/index";
 
-const HomePage = ({ hotItemsCollection, newReleasesCollection }) => {
+const HomePage = ({ fetchCollectionsStart, hotItemsCollection }) => {
+  useEffect(() => {
+    fetchCollectionsStart();
+  }, []);
+
   return (
-    <HomePageContainer>
-      <MainPageBannerWrapper
-        primaryImage={homepageImage}
-        secondaryImage={mustHavesImage}
-        text="For those who move."
-        styleType={1}
-      />
-      <CollectionsOverviewWrapper></CollectionsOverviewWrapper>
-      <MainPageBannerWrapper
-        primaryImage={homepageImage2}
-        text="The Gymshark x Whitney Simmons Collection"
-        title="SHAPED BY PROGRESS"
-        styleType={2}
-      />
-      <CollectionsOverviewWrapper></CollectionsOverviewWrapper>
+    <div className="homepage">
+      <div className="homepage__mainbanner homepage__mainbanner--1">
+        <MainPageBanner
+          primaryImage={homepageImage}
+          secondaryImage={mustHavesImage}
+          text="For those who move."
+          styleType={1}
+        />
+      </div>
+
+      <div className="homepage__collection homepage__collection1">
+        {hotItemsCollection.map((item) => (
+          <CollectionItem key={item._id} item={item}></CollectionItem>
+        ))}
+      </div>
+      <div className="homepage__mainbanner homepage__mainbanner--2">
+        <MainPageBanner
+          primaryImage={homepageImage2}
+          text="The Gymshark x Whitney Simmons Collection"
+          title="SHAPED BY PROGRESS"
+          styleType={2}
+        />
+      </div>
+
+      <div className="homepage__collection homepage__collection2">
+        {hotItemsCollection.map((item) => (
+          <CollectionItem key={item._id} item={item}></CollectionItem>
+        ))}
+      </div>
 
       <FooterBanner className="footer-banner" />
-    </HomePageContainer>
+    </div>
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  hotItemsCollection: selectCollection("hot-items"),
-  newReleasesCollection: selectCollection("new-releases"),
+const mapStateToProps = (state) => ({
+  hotItemsCollection: state.shop.collections,
+});
+const mapDispatchToProps = (dispatch) => ({
+  fetchCollectionsStart: (key) => dispatch(fetchCollectionsStart(key)),
 });
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

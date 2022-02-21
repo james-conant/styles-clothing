@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 // const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -10,13 +11,15 @@ const connectDB = require("./db/db");
 const userRoute = require("./api/routes/user");
 const shopRoute = require("./api/routes/shop");
 const authRoute = require("./api/routes/auth");
+const { DOCKER } = require("./env");
 
+console.log(DOCKER);
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
 const app = express();
 connectDB();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 6000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -40,7 +43,7 @@ app.use("/api/auth", authRoute);
 
 app.listen(port, (error) => {
   if (error) throw error;
-  console.log(`shits up on port ${port}!`);
+  console.log(`shits up on port ${port}`);
 });
 
 app.get("/service-worker.js", (req, res) => {

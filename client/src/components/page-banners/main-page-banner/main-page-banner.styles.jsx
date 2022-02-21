@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const BannerWrapper = styled.div`
   width: -webkit-fill-available;
   overflow: hidden;
+  height: inherit;
 `;
 
 export const Wrapper = styled.div`
   background-image: ${({ primaryImage }) => `url(${primaryImage})`};
   background-size: cover;
   background-position: center;
-  height: 85vh;
+  height: inherit;
   -webkit-font-smoothing: antialiased;
   box-shadow: inset 0px -130px 200px -45px black;
   display: flex;

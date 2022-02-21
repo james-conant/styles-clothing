@@ -17,7 +17,7 @@ const MainPageBanner = ({
 }) => {
   const secondaryImg = secondaryImage ? secondaryImage : "";
   return (
-    <BannerWrapper className="banner-wrapper">
+    <BannerWrapper>
       <Wrapper className="wrapper" primaryImage={primaryImage}>
         <div className={`container container--${styleType}`}>
           {title ? <div className="title">{title}</div> : null}

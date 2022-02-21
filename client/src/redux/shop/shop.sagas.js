@@ -10,9 +10,13 @@ import ShopActionTypes from "./shop.types";
 
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
-export function* fetchAllCollections() {
+export function* fetchAllCollections({ payload }) {
   try {
-    const { data } = yield axios.get("api/shop/");
+    const { data } = yield axios.get("api/shop/", {
+      params: {
+        param: payload,
+      },
+    });
     yield put(fetchCollectionsSuccess(data));
   } catch (error) {
     put(fetchCollectionsFailure(error));

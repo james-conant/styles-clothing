@@ -1,9 +1,16 @@
 .advert-scroll {
-  height: 5vh;
+  height: 14vh;
   display: flex;
   width: 100%;
   justify-content: center;
-  z-index: 6;
+  align-items: flex-end;
+  padding-bottom: 1vh;
+
+  .button {
+    cursor: pointer;
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
 .scroll-wrapper {

@@ -1,1 +1,7 @@
 font idea -> Roboto,Helvetica,Arial,sans-serif
+
+
+- mongo shell
+mongo --host localhost:27017 -u 'root' -p 'example'
+
+mongodb://root:password@localhost:27017

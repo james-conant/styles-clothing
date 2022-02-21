@@ -1,63 +1,32 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.actions";
-import { selectCollections } from "../../redux/shop/shop.selectors";
 
-import { useSelector } from "react-redux";
 import CustomButton from "../custom-button/custom-buttom.component";
 
 import "./collection-item.styles.scss";
 
-const CollectionItem = ({ size, item, addItem, extra1 }) => {
-  const cartItems = useSelector(selectCollections);
-
-  return cartItems.map((item) => {
-    console.log(item.images);
-
-    return (
-      <div
-        key={item._id}
-        className={`collection-item collection-item--${null}`}
-      >
-        <div
-          className="image"
-          style={{ backgroundImage: `url(${item.images[0].url_570xN})` }}
-        />
-        <div className="collection-footer">
-          {extra1 ? (
-            <Fragment>
-              <div className="collection-footer__line-1">
-                <span className="collection-footer__extra-1">{null}</span>
-                <span className="collection-footer__price">
-                  ${item.price} USD
-                </span>
-              </div>
-              <div className="collection-footer__line-2">
-                <span className="collection-footer__name">
-                  {item.title.slice(0, 15)}...
-                </span>
-              </div>
-            </Fragment>
-          ) : (
-            <Fragment>
-              <div className="collection-footer__line-1">
-                <span className="collection-footer__name">
-                  {item.title.slice(0, 15)}
-                </span>
-                <span className="collection-footer__price">
-                  ${item.price} USD
-                </span>
-              </div>
-            </Fragment>
-          )}
+const CollectionItem = ({ item }) => (
+  <div key={item._id} className={`collection-item collection-item--${null}`}>
+    <div
+      className="image"
+      style={{ backgroundImage: `url(${item.images[0].url_570xN})` }}
+    />
+    <div className="collection-footer">
+      <Fragment>
+        <div className="collection-footer__line-1">
+          <span className="collection-footer__name">
+            {item.title.slice(0, 15)}
+          </span>
+          <span className="collection-footer__price">${item.price} USD</span>
         </div>
-        <CustomButton onClick={() => addItem(item)} inverted>
-          Add to cart
-        </CustomButton>
-      </div>
-    );
-  });
-};
+      </Fragment>
+    </div>
+    <CustomButton onClick={() => addItem(item)} inverted>
+      Add to cart
+    </CustomButton>
+  </div>
+);
 
 const mapDispatchToProps = (dispatch) => ({
   addItem: (item) => dispatch(addItem(item)),

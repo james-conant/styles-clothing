@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 body {
     font-family: "Open Sans Condensed";
-    padding: 0px 60px 0px 60px;
+    // padding: 0px 60px 0px 60px;
     @media screen and (max-width: 800px) {
         padding: 10px;
     }
@@ -19,34 +19,17 @@ body {
   }
 
   .content {
-    padding-top: 3vh;
   }
 
   .header-container {
-    margin: 0 -60px;
-    height: 7vh;
+    position: fixed;
     border-bottom: 1px solid black;
+    width: 100%;
+    z-index: 1;
   }  
 
   .super-container {
 
 
-  }
-
-  .footer {
-    margin: 0 -60px;
-  }
-
-  .banner-wrapper {
-    margin: 0 -60px;
-
-  }
-
-  .collection-header {
-    margin: 0 -60px;
-  }
-
-  .footer-banner {
-    margin: 0 -60px;
   }
 `;
