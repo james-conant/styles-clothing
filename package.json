@@ -25,6 +25,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
     "node-fetch": "^3.2.0",
+    "react-responsive": "^9.0.0-beta.6",
     "stripe": "6.28.0"
   },
   "devDependencies": {
