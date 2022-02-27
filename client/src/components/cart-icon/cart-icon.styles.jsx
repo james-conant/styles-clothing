@@ -12,8 +12,6 @@ export const Container = styled.div`
 
 export const ItemCount = styled.span`
   position: absolute;
-  font-size: 10px;
-  font-weight: bold;
   bottom: 0px;
   right: 0px;
   background-color: rgb(0, 125, 181);
@@ -26,5 +24,4 @@ export const ItemCount = styled.span`
   align-items: center;
 `;
 
-export const SVG = styled(CartIcon)`
-`;
+export const SVG = styled(CartIcon)``;

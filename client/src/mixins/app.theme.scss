@@ -1,0 +1,19 @@
+:root {
+    --theme-app-Color--primary: #3F2021;
+    --theme-app-Color--accent: #7d5d5c;
+  
+    --theme-app-Calories-Color: var(--theme-app-Color--primary);
+    --theme-app-Calories-FontFamily: 'Sofia Pro Bold';
+    --theme-app-Calories-FontSize: 25px;
+    --theme-app-Calories-FontWeight: 600;
+    --theme-app-Calories-LetterSpacing: -0.5px;
+    --theme-app-Calories-LineHeight: 1;
+  
+    --theme-app-Price-Color: var(--theme-app-Color--primary);
+    --theme-app-Price-FontFamily: 'Sofia Pro Bold';
+    --theme-app-Price-FontSize: 25px;
+    --theme-app-Price-FontWeight: 600;
+    --theme-app-Price-LetterSpacing: -0.5px;
+    --theme-app-Price-LineHeight: 1;
+  }
+  

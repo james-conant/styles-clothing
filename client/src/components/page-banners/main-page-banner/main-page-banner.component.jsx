@@ -1,41 +1,24 @@
 import React from "react";
 
 import "./main-page-banner.styles.scss";
-import {
-  Wrapper,
-  SecondImageWrapper,
-  BannerWrapper,
-} from "./main-page-banner.styles";
 import { Link } from "react-router-dom";
 
-const MainPageBanner = ({
-  title,
-  text,
-  styleType,
-  primaryImage,
-  secondaryImage,
-}) => {
-  const secondaryImg = secondaryImage ? secondaryImage : "";
+const MainPageBanner = ({ primaryImage, secondaryImage, text }) => {
+  const primaryImg = { backgroundImage: `url(${primaryImage})` };
+  const secondaryImg = { backgroundImage: `url(${secondaryImage})` };
+
   return (
-    <BannerWrapper>
-      <Wrapper className="wrapper" primaryImage={primaryImage}>
-        <div className={`container container--${styleType}`}>
-          {title ? <div className="title">{title}</div> : null}
-
-          {secondaryImage ? (
-            <SecondImageWrapper
-              className="must-haves"
-              secondaryImage={secondaryImg}
-            ></SecondImageWrapper>
-          ) : null}
-
-          <p className="item">{text}</p>
-          <Link className="button " to="/shop">
-            SHOP
+    <div className="banner">
+      <div className="banner__primary" style={primaryImg}>
+        <div className="banner__secondary" style={secondaryImg}></div>
+        <div className="banner__content">
+          <Link class="banner__button" to="/shop">
+            Shop
           </Link>
+          <p class="banner__text">{text}</p>
         </div>
-      </Wrapper>
-    </BannerWrapper>
+      </div>
+    </div>
   );
 };
 

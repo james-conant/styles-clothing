@@ -1,0 +1,47 @@
+$breakpoint_extralarge_devices: 1200px;
+$breakpoint_large_devices: 992px;
+$breakpoint_medium_devices: 768px;
+$breakpoint_small_devices: 576px;
+
+@mixin header_link_button {
+}
+
+@mixin footer_link_button {
+}
+
+@mixin banner_link_button {
+  background-color: #fff;
+  color: #000;
+  font-size: 1.3rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 5rem;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: $breakpoint_extralarge_devices) {
+  }
+
+  @media screen and (max-width: $breakpoint_large_devices) {
+  }
+
+  @media screen and (max-width: $breakpoint_medium_devices) {
+    // possibly remove banner
+  }
+
+  @media screen and (max-width: $breakpoint_small_devices) {
+    // need to remove banner
+  }
+}
+
+@mixin main_banner_text {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+}

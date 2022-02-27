@@ -63,7 +63,7 @@ const App = () => {
             </Switch>
           </Suspense>
         </ErrorBoundry>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

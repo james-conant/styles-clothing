@@ -1,9 +1,7 @@
 .collection-header {
   height: 22vh;
   background-color: rgb(245, 245, 245);
-  font-weight: 700;
   text-transform: uppercase;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -12,10 +10,8 @@
     justify-content: center;
   }
   &__gender {
-    font-size: 15px;
     padding-bottom: 10px;
   }
   &__category {
-    font-size: 35px;
   }
 }

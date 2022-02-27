@@ -10,10 +10,8 @@
   top: 90px;
   right: 40px;
   z-index: 5;
-  font-family: "Open Sans Condensed";
 
   .empty-message {
-    font-size: 18px;
     margin: 18px auto;
   }
 
@@ -27,8 +25,4 @@
   button {
     margin-top: auto;
   }
-}
-.custom-button {
-  font-family: "Open Sans Condensed" !important;
-  // need to /deep/ or select styled component or prop (different versions of button styles)
 }

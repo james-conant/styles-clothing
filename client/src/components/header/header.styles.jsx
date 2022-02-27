@@ -10,15 +10,8 @@ export const HeaderContainer = styled.div`
   height: 6vh;
   background-color: white;
   border-bottom: 1px solid rgb(235, 235, 235);
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   z-index: 1;
-
-  @media screen and (max-width: 800px) {
-    height: 60px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
 `;
 
 export const OptionsContainerLeft = styled.div`
@@ -31,20 +24,12 @@ export const OptionsContainerRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
-  @media screen and (max-width: 800px) {
-    width: 80%;
-  }
 `;
 
 export const OptionsContainerMid = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-
-  @media screen and (max-width: 800px) {
-    width: 80%;
-  }
 `;
 
 export const OptionContainer = styled.div`
@@ -53,15 +38,11 @@ export const OptionContainer = styled.div`
 
 export const OptionLink = styled(Link)`
   color: rgb(0, 0, 0);
-  font-weight: 700;
-  font-size: 15px;
   cursor: pointer;
 `;
 export const SignInLink = styled(Link)`
   padding: 10px 12px;
   color: rgb(0, 0, 0);
-  font-weight: 700;
-  font-size: 10px;
   width: 60px;
 
   cursor: pointer;

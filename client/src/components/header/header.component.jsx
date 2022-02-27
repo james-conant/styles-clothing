@@ -27,7 +27,7 @@ const Header = ({ hidden }) => (
     <div className="header-container">
       <SuperContainer />
 
-      <HeaderContainer className="header">
+      <HeaderContainer>
         <OptionsContainerLeft>
           <LogoIcon />
         </OptionsContainerLeft>

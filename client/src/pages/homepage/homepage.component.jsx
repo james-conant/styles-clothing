@@ -28,10 +28,9 @@ const HomePage = ({ fetchCollectionsStart, hotItemsCollection }) => {
           primaryImage={homepageImage}
           secondaryImage={mustHavesImage}
           text="For those who move."
-          styleType={1}
-        />
+        ></MainPageBanner>
       </div>
-
+{/* 
       <div className="homepage__collection homepage__collection1">
         {hotItemsCollection.map((item) => (
           <CollectionItem key={item._id} item={item}></CollectionItem>
@@ -52,7 +51,7 @@ const HomePage = ({ fetchCollectionsStart, hotItemsCollection }) => {
         ))}
       </div>
 
-      <FooterBanner className="footer-banner" />
+      <FooterBanner className="footer-banner" /> */}
     </div>
   );
 };

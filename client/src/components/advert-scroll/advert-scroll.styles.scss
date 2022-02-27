@@ -1,5 +1,7 @@
+@import "src/mixins/app.mixins";
+
 .advert-scroll {
-  height: 14vh;
+  height: 5vh;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -10,6 +12,10 @@
     cursor: pointer;
     padding: 0;
     border-radius: 0;
+  }
+
+  @media screen and (max-width: $breakpoint_medium_devices) {
+    display: none;
   }
 }
 
@@ -23,7 +29,6 @@
 .text {
   display: flex;
   width: 100%;
-  font-size: 14px;
 }
 
 .animation-right {

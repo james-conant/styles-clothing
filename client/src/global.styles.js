@@ -1,12 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+html {
+  font-size: 62.5%;
+}
+
 body {
-    font-family: "Open Sans Condensed";
-    // padding: 0px 60px 0px 60px;
-    @media screen and (max-width: 800px) {
-        padding: 10px;
-    }
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: 700;
   }
   
   a {
@@ -16,20 +17,5 @@ body {
   
   * {
     box-sizing: border-box;
-  }
-
-  .content {
-  }
-
-  .header-container {
-    position: fixed;
-    border-bottom: 1px solid black;
-    width: 100%;
-    z-index: 1;
-  }  
-
-  .super-container {
-
-
   }
 `;
