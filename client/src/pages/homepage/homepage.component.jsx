@@ -30,13 +30,13 @@ const HomePage = ({ fetchCollectionsStart, hotItemsCollection }) => {
           text="For those who move."
         ></MainPageBanner>
       </div>
-{/* 
+
       <div className="homepage__collection homepage__collection1">
         {hotItemsCollection.map((item) => (
           <CollectionItem key={item._id} item={item}></CollectionItem>
         ))}
       </div>
-      <div className="homepage__mainbanner homepage__mainbanner--2">
+      {/* <div className="homepage__mainbanner homepage__mainbanner--2">
         <MainPageBanner
           primaryImage={homepageImage2}
           text="The Gymshark x Whitney Simmons Collection"

@@ -13,44 +13,75 @@ import AdvertScroll from "../advert-scroll/advert-scroll.component";
 import UserIcon from "../user-icon/user-icon.component";
 import LogoIcon from "../logo-icon/logo-icon.component";
 
-import {
-  HeaderContainer,
-  OptionsContainerLeft,
-  OptionsContainerRight,
-  OptionsContainerMid,
-  OptionContainer,
-  OptionLink,
-} from "./header.styles";
+import { Link } from "react-router-dom";
 
-const Header = ({ hidden }) => (
-  <div className="headerwrapper">
-    <div className="header-container">
-      <SuperContainer />
+import { useMediaQuery } from "react-responsive";
+import "./header.styles.scss";
 
-      <HeaderContainer>
-        <OptionsContainerLeft>
-          <LogoIcon />
-        </OptionsContainerLeft>
-        <OptionsContainerMid>
-          <OptionContainer>
-            <OptionLink to="/shop/womens">WOMENS</OptionLink>
-          </OptionContainer>
-          <OptionContainer>
-            <OptionLink to="/shop/mens">MENS</OptionLink>
-          </OptionContainer>
-        </OptionsContainerMid>
-        <OptionsContainerRight>
-          <SearchIcon />
-          <UserIcon />
-          <CartIcon />
-        </OptionsContainerRight>
+const Header = ({ hidden }) => {
+  const isLimited = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
+
+  const limitedClass = isLimited ? "header--limited" : "header--not-limited";
+  return (
+    <div class={limitedClass}>
+      {!isLimited && <SuperContainer />}
+      <div class={`${limitedClass}__container`}>
+        <div class={`${limitedClass}__options_left`}>
+          {!isLimited ? (
+            <LogoIcon />
+          ) : (
+            <Fragment>
+              <SearchIcon />
+              <UserIcon />
+            </Fragment>
+          )}
+        </div>
+        <div class={`${limitedClass}__options_mid`}>
+          {!isLimited ? (
+            <Fragment>
+              <div class={`${limitedClass}__options_container`}>
+                <Link to="/shop/womens">WOMENS</Link>
+              </div>
+              <div class={`${limitedClass}__options_container`}>
+                <Link to="/shop/mens">MENS</Link>
+              </div>
+            </Fragment>
+          ) : (
+            <LogoIcon />
+          )}
+        </div>
+        <div class={`${limitedClass}__options_right`}>
+          {!isLimited ? (
+            <div class={`${limitedClass}__options_right--sub`}>
+              <SearchIcon />
+              <UserIcon />
+              <CartIcon />
+            </div>
+          ) : (
+            <CartIcon />
+          )}
+        </div>
 
         {hidden ? null : <CartDropdown />}
-      </HeaderContainer>
+      </div>
+      {!isLimited ? (
+        <AdvertScroll />
+      ) : (
+        <div className={`${limitedClass}__options_bottom`}>
+          <div className={`${limitedClass}__options_container`}>
+            <Link to="/shop/womens">SHOP WOMENS</Link>
+          </div>
+          <div className={`${limitedClass}__options_divider`}></div>
+          <div className={`${limitedClass}__options_container`}>
+            <Link to="/shop/mens">SHOP MENS</Link>
+          </div>
+        </div>
+      )}
     </div>
-    <AdvertScroll />
-  </div>
-);
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   hidden: selectCartHidden,

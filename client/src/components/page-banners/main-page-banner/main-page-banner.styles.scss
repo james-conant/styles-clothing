@@ -7,13 +7,7 @@
 
   &__primary {
     height: 100%;
-    background-size: cover;
-    background-position: center;
     box-shadow: inset 0px -130px 200px -45px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: content-box;
 
     &:hover {
       cursor: pointer;
@@ -25,30 +19,13 @@
       transform: scale(1);
       transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
-    @media screen and (max-width: $breakpoint_medium_devices) {
-      background-position: right;
-    }
-    @media screen and (max-width: $breakpoint_small_devices) {
-    }
   }
 
   &__secondary {
-    height: 35vh;
-    background-repeat: no-repeat;
-    background-position: center;
     width: 100%;
-    transform: scale(0.8);
-    @media screen and (max-width: $breakpoint_medium_devices) {
-      background-size: contain;
-      transform: scale(1.5);
-    }
   }
 
   &__content {
-    height: 15vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   &__button {
@@ -63,9 +40,4 @@
 
 p {
   color: white;
-}
-.title {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
