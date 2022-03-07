@@ -25,10 +25,10 @@ const Header = ({ hidden }) => {
 
   const limitedClass = isLimited ? "header--limited" : "header--not-limited";
   return (
-    <div class={limitedClass}>
+    <div className={limitedClass}>
       {!isLimited && <SuperContainer />}
-      <div class={`${limitedClass}__container`}>
-        <div class={`${limitedClass}__options_left`}>
+      <div className={`${limitedClass}__container`}>
+        <div className={`${limitedClass}__options_left`}>
           {!isLimited ? (
             <LogoIcon />
           ) : (
@@ -38,23 +38,27 @@ const Header = ({ hidden }) => {
             </Fragment>
           )}
         </div>
-        <div class={`${limitedClass}__options_mid`}>
+        <div className={`${limitedClass}__options_mid`}>
           {!isLimited ? (
             <Fragment>
-              <div class={`${limitedClass}__options_container`}>
-                <Link to="/shop/womens">WOMENS</Link>
+              <div className={`${limitedClass}__options_container`}>
+                <Link className={`${limitedClass}__link`} to="/shop/womens">
+                  WOMENS
+                </Link>
               </div>
-              <div class={`${limitedClass}__options_container`}>
-                <Link to="/shop/mens">MENS</Link>
+              <div className={`${limitedClass}__options_container`}>
+                <Link className={`${limitedClass}__link`} to="/shop/mens">
+                  MENS
+                </Link>
               </div>
             </Fragment>
           ) : (
             <LogoIcon />
           )}
         </div>
-        <div class={`${limitedClass}__options_right`}>
+        <div className={`${limitedClass}__options_right`}>
           {!isLimited ? (
-            <div class={`${limitedClass}__options_right--sub`}>
+            <div className={`${limitedClass}__options_right--sub`}>
               <SearchIcon />
               <UserIcon />
               <CartIcon />

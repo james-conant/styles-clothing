@@ -10,11 +10,6 @@ body {
     font-weight: 700;
   }
   
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  
   * {
     box-sizing: border-box;
   }
